@@ -1,0 +1,30 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  .main-page
+    .profile-right
+      .profile-right-container
+        .profile-title プロフィール変更
+        = form_for (@user) do |f|
+          .profile-image  プロフィール画像
+          = f.label :image, class: '#', for:'user' do
+            .js-file_group
+              = f.file_field :image, class: 'hidden'
+          .field
+          = f.label :ニックネーム
+          %br/
+          = f.text_field :nickname, class: "input-form", autofocus: true, autocomplete: "nickname", maxlength: "6"
+          = f.label :自己紹介
+          %br/
+          = f.text_area :profile, class: "input-form", placeholder: '詳細を書きましょう', rows: "16"
+          = f.submit "編集する", class: 'form-btn-right'
+          
+    .profile-left
+      .profile-top
+        = image_tag @user.image
+        .profile-user-name
+          = @user.nickname
+          .fa.fa-cog
+      .profile-edit-menu
+        = link_to 'プロフィール編集' , edit_user_path
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete 
+  = render partial: 'posts/parts/footer'

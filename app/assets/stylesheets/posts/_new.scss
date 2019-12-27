@@ -1,0 +1,109 @@
+.page-1culum {
+  width: 700px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 35px 30px 30px 30px;
+}
+.page-title {
+  font-size: 28px;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+.site-width-mid {
+  width: 100%;
+  margin: 0 auto;
+}
+.half-form-wrap {
+  margin-bottom: 30px;
+  //display: flex;
+}
+.tag-required {
+  background: #d57070;
+  color: #fff;
+  font-size: 12px;
+  padding: 1px 5px 3px;
+  margin-left: 15px;
+  border-top: 1px solid #d57070;
+  width: 24px;
+}
+.half-form {
+  background-color: #f2f2f2;
+  display: inline-block;
+  max-width: 80px;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  //text-align: center;
+}
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+.input-form {
+  background-color: #f2f2f2;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 8px;
+  font-size: 14px;
+  margin: 5px 0 30px 0;
+  border: none;
+  border-radius: 3px;
+}
+.checkbox-wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+element.style {
+  float: right;
+  font-size: 12px;
+  visibility: hidden;
+}
+.form-btn-right {
+  transition: 0.2s;
+  margin: 10px 0 10px 0;
+  display: block;
+  width: 120px;
+  float: right;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  overflow: hidden;
+  border: 1px solid #888;
+}
+.tag-not-required {
+  background: #00adb5;
+  color: #fff;
+  font-size: 12px;
+  padding: 1px 5px 3px;
+  margin-left: 15px;
+  border-top: 1px solid #00adb5;
+  width: 24px;
+}
+.input-group > .form-control, .input-group > .custom-select, .input-group > .custom-file {
+  background-color: #f2f2f2;
+  padding: 15px 8px;
+  font-size: 14px;
+  margin-top: 5px;
+  color: black;
+  border: none;
+}
+.input-group-text {
+  margin-top: 5px;
+  border: none;
+}
+.bootstrap-datetimepicker-widget {
+  display: none;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  float: initial;
+  position: relative;
+}

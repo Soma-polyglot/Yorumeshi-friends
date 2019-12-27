@@ -1,0 +1,31 @@
+.wrapper
+  = render 'posts/parts/header'
+  .main-page-sign-in
+    .main-innner
+      .hheader
+        新規登録
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          = f.label :ニックネーム
+          %br/
+          = f.text_field :nickname, class: "input-form", autofocus: true, autocomplete: "nickname", maxlength: "6"
+        .field
+          = f.label :メールアドレス
+          %br/
+          = f.email_field :email, class: "input-form", autofocus: true, autocomplete: "email"
+        .field
+          = f.label :パスワード
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, class: "input-form", autocomplete: "new-password"
+        .field
+          = f.label :パスワードを再度入力してください
+          %br/
+          = f.password_field :password_confirmation, class: "input-form", autocomplete: "new-password"
+        .actions
+          = f.submit "新規登録" , class: "sign-btn"
+      = render "devise/shared/links"
+  = render 'posts/parts/footer'

@@ -1,0 +1,84 @@
+.main-page {
+  width: 100%;
+  max-width: 980px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 30px;
+  .search-box-wrap {
+    width: 100%;
+    background: #f2f2f2;
+    padding: 10px 15px 15px 15px;
+    margin: 0 auto 65px auto;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    .search-box {
+      display: inline-block;
+      box-sizing: border-box;
+      margin: 5px;
+      padding: 5px;
+      height: 35px;
+      .form-btn-right {
+        float: none;
+        margin: 0;
+        position: absolute;
+        background:white;
+        color:#7b7b7b;
+        width: 200px;
+        right: 0px;
+        bottom: -60px;
+        cursor: pointer;
+        .form-mid {
+          width: 55px;
+          padding-right: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+select {
+  height: 32px;
+  padding: 5px 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: none;
+  font-weight: normal;
+}
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+label {
+  font-size: 16px;
+}
+.freeWord {
+  border-radius: 3px;
+  border: none;
+}
+
+.search-box {
+  background-color: whitesmoke;
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.4em;
+  position: relative;
+  width: 87%;
+  -webkit-appearance: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-image: initial;
+  border-radius: 4px;
+  outline: none;
+  padding: 0px 50px 0px 10px;
+  transition: all 0.3s ease-out 0s;
+}
+.search-btn {
+  height: 40px;
+  width: 95px;
+  border-radius: 4px;
+}

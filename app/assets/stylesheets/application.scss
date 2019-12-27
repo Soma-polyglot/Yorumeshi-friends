@@ -1,0 +1,24 @@
+@import "./reset";
+@import "font-awesome";
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import "tempusdominus-bootstrap-4.css";
+
+//posts
+@import "posts/index";
+@import "posts/new";
+@import "posts/search";
+@import "posts/contents-wrap";
+@import "posts/show";
+@import "posts/users";
+
+//users
+@import "users/show";
+@import "users/edit";
+// device
+@import "devise/sign-in";
+// top
+@import "modules/top";
+// mypage
+@import "mypage/show";

@@ -1,0 +1,16 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  
+  .main-page
+    = render partial: 'posts/parts/search'
+    .contents-wrap
+      .counter-all
+        = @counter 
+        件 を表示
+      .counter  
+      = render partial: 'posts/parts/contents-wrap'
+    .pagination
+      = paginate(@posts)
+  = render partial: 'posts/parts/recruit-btn'
+  = render partial: 'posts/parts/footer'
+

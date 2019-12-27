@@ -1,0 +1,26 @@
+- @posts.each do |post|
+  .post
+    .post-header
+      .post-header-left
+        .fa.fa-calendar
+          = post.date
+        .genre-tag
+          = post.genre.name
+      .post-header-right
+        .permit-flg
+          = post.count.name
+          人 募集
+        .area-box
+          %i.fa.fa-map-marker
+            = post.prefecture.name
+            = post.venue
+    .post-left.post-left
+      = image_tag post.user.image
+      .user_name
+        = link_to post.user.nickname, "/users/#{post.user.id}", method: :get
+    .post-right
+      .post_title
+        = link_to post.title, "/posts/#{post.id}", method: :get, class: 'title'
+      .comment
+        = post.comment
+    

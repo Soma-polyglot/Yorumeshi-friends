@@ -1,0 +1,31 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  .main-page
+    .profile-left
+      .profile-top
+        = image_tag @user.image
+    .profile-right
+      .profile-user-name
+        = @user.nickname
+        %span さんのマイページ
+      .profile-comment
+        = @user.profile
+      .show-box
+        .show-box-title 募集予定
+        - @posts.each do |post|
+          .posts-box
+            .post-title
+              = link_to post.title, "/posts/#{post.id}", method: :get, class: 'title'
+            .genre-tag
+              = post.genre.name
+            .fa.fa-calendar
+              = post.date
+            .fa.fa-map-marker
+              = post.prefecture.name
+              = post.venue
+            .fa.fa-user
+              = post.count.name
+              人
+            .fa.fa-comment 
+              = post.comment
+  = render partial: 'posts/parts/footer'

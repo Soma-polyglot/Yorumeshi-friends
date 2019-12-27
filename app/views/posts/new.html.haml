@@ -1,0 +1,42 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  .page-1culum
+    .page-title   募集する
+    .site-width-mid
+      = form_for [@post] do |f|
+        .half-form-wrap
+          開催日
+          %span.tag-required 必須
+          .date-box
+            = f.text_field :date, class: "input-form", id: "start_time", data: {toggle: "datetimepicker", target: "#start_time"}
+        .half-form-wrap
+          地域
+          %span.tag-required 必須
+          .err-msg
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'input-form', prompt: "--"
+        開催場所
+        %span.tag-not-required 任意
+        .err-msg
+        = f.text_field :venue, class: "input-form", placeholder: '駅名・店舗名など'
+        .half-form-wrap
+          募集人数
+          %span.tag-not-required 任意
+          .err-msg
+          = f.collection_select :count_id, Count.all, :id, :name, prompt: "--", class: 'half-form'
+          人
+        .half-form-wrap
+          ジャンル
+          %span.tag-required 必須
+          .err-msg
+          = f.collection_select :genre_id, Genre.where(ancestry: nil), :id, :name, prompt: "--", class: ''
+        タイトル
+        %span.tag-required 必須
+        .err-msg
+        = f.text_field :title, class: "input-form", placeholder: '例:仕事終わりにどうですか？'
+        説明文（2000文字まで）
+        %span.tag-not-required 任意
+        .err-msg
+        = f.text_area :comment, class: "input-form", placeholder: '詳細を書きましょう', rows: "16"
+        %input.form-btn-right{type: "submit", value: "作成"}/
+  = render partial: 'posts/parts/footer'
+          

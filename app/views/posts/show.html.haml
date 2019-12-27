@@ -1,0 +1,54 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  .main-page
+    .profile
+      .profile-panel
+        = image_tag @post.user.image
+        .user_name
+          = @post.user.nickname
+    .main-container
+      .show-box
+        .show-box-title 詳細
+        .post-title
+          = @post.title
+        .genre-tag
+          = @post.genre.name
+        .fa.fa-calendar
+          = @post.date
+        .fa.fa-map-marker
+          = @post.prefecture.name
+          = @post.venue
+        .fa.fa-user
+          = @post.count.name
+          人
+        .fa.fa-comment 
+          = @post.comment
+        - if @post.status = 1
+          - if user_signed_in? && current_user.id == @post.user_id
+            = link_to "投稿を編集する", edit_post_path, method: :get, class: "button"
+            = link_to "投稿を削除する", post_path, method: :delete, data: { confirm: '削除しますか？' }, class: "button"
+          - else
+            -# = link_to "参加する", post_path, class: "button"
+        - else 
+          = link_to "締切済み", "#", class: "button"
+        投稿時間
+        = @post.created_at.strftime("%Y-%m-%d %H:%M")
+      .show-box
+        .show-box-title 参加者
+      .show-box
+        .show-box-title 掲示板
+        - if current_user
+          = form_for [@post, @comment] do |f|
+            = f.text_area :text, class: "input-form", placeholder: '例:よろしくおねがいします'
+            %input.comment-btn{type: "submit", value: "送信"}/
+        - else
+          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        - if @comments
+          - @comments.each do |comment|
+            .comment-time
+              = comment.created_at.strftime("%Y-%m-%d %H:%M")
+              .comment-name
+                = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                ：
+                = comment.text
+  = render partial: 'posts/parts/footer'

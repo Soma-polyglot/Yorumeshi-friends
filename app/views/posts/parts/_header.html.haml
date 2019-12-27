@@ -1,0 +1,20 @@
+.header
+  .header-mini
+    .header-mini_in
+      おとなの夜ご飯マッチングアプリ
+  .header-inner
+    = link_to root_path do
+      よるめしフレンズ
+    .logo-image
+    - if user_signed_in?
+      .header-menu
+        = link_to '参加する' , posts_path 
+        = link_to '募集する' , new_post_path
+        = link_to 'ログアウト' , destroy_user_session_path, method: :delete 
+        = link_to "マイページ" ,"/mypage/#{current_user.id}"
+    - else
+      .header-menu
+        = link_to '参加する' , posts_path 
+        = link_to '募集する' , new_post_path 
+        = link_to 'ログイン' , new_user_session_path
+        = link_to "新規登録" , new_user_registration_path

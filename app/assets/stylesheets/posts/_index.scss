@@ -1,0 +1,117 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .header {
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    width: 100%;
+    .header-mini {
+      width: 100%;
+      background: #f2f2f2;
+      .header-mini_in {
+        width: 960px;
+        margin: 0 auto;
+        color: #7b7b7b;
+        font-weight: bold;
+        line-height: 20px;
+        font-size: 11px;
+      }
+    }
+    .header-inner {
+      margin: 0 auto;
+      //padding-top: 12px;
+      width: 940px;
+      height: 70px;
+      a {
+        color: black;
+        float: left;
+        margin-right: 5px;
+        font-size: 1.6em;
+        color: #555555;
+        //letter-spacing: 0.1em;
+        line-height: 1.5em;
+        font-family: 'Playfair Display', serif;
+        text-decoration: none;
+      }
+      .logo-image {
+        float: left;
+        width: 44px;
+        height: 40px;
+        margin-top: 15px;
+        margin-right: 80px;
+        background-image: url("https://image.flaticon.com/icons/svg/868/868069.svg")
+      }
+      }
+      .header-menu {
+        //float: right;
+        .join {
+          float: left;
+        }
+        .post {
+          float: left;
+        }
+        .entry {
+          float: left;
+        }
+      }
+  }
+  .pagination {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+  }
+  .page.active {
+    background: #444;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .page {
+    background: #fff;
+    width: 30px;
+    height: 40px;
+    margin: 0 5px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    color: #555;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  .footer {
+    margin-top: auto;
+    background-color: #7b7b7b;
+    color: #eee;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+  }
+  p {
+    top: 8px;
+    position: relative;
+  }
+  .recruit-btn {
+    position: fixed;
+    z-index: 100;
+    bottom: 32px;
+    right: 32px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #7b7b7b;
+    color: #fff;
+    text-align: center;
+    &__head {
+      height: 22px;
+      margin: 32px 0 3px 0;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+    .fa {
+      font-size: 60px;
+      margin-top: 8px;
+      color: #fff;
+    }
+  }
+}

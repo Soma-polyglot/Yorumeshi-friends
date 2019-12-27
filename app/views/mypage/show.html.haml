@@ -1,0 +1,23 @@
+.wrapper
+  = render partial: 'posts/parts/header'
+  .main-page
+    .profile-right
+      .profile-right-container
+        .profile-title マイページ
+        .show-box
+          .show-box-title 最新メッセージ
+        .show-box
+          .show-box-title 参加予定
+        .show-box
+          .show-box-title 募集予定
+    .profile-left
+      .profile-top
+        = image_tag @user.image
+        .profile-user-name
+          = @user.nickname
+          = link_to edit_user_path do
+            = fa_icon 'cog'
+      .profile-edit-menu
+        = link_to 'プロフィール編集' , edit_user_path
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete 
+  = render partial: 'posts/parts/footer'
