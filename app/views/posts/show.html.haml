@@ -35,6 +35,7 @@
         = @post.created_at.strftime("%Y-%m-%d %H:%M")
       .show-box
         .show-box-title 参加者
+        = image_tag @post.user.image, class:'icon-small'
       .show-box
         .show-box-title 掲示板
         - if current_user
@@ -45,10 +46,12 @@
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
         - if @comments
           - @comments.each do |comment|
-            .comment-time
+            .comments
               = comment.created_at.strftime("%Y-%m-%d %H:%M")
               .comment-name
+                = image_tag comment.user.image, class:'icon-small'
                 = link_to comment.user.nickname, "/users/#{comment.user_id}"
                 ：
+
                 = comment.text
   = render partial: 'posts/parts/footer'

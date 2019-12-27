@@ -14,7 +14,7 @@
       .profile-top
         = image_tag @user.image
         .profile-user-name
-          = @user.nickname
+          = link_to @post.user.nickname, "/users/#{@post.user.id}", method: :get, class:"profile-user-name"
           = link_to edit_user_path do
             = fa_icon 'cog'
       .profile-edit-menu
