@@ -48,7 +48,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: yorumeshi-friends_production
-  username: yorumeshi-friends
-  password: <%= ENV['YORUMESHI-FRIENDS_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: db_production
+  
