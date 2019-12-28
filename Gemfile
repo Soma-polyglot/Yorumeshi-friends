@@ -60,6 +60,7 @@ group :production do
   gem 'unicorn', '5.4.1'
   gem 'pg'
   gem 'rails_12factor'
+  gem 'cloudinary'
 end
 
 group :development, :test do
