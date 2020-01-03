@@ -15,7 +15,10 @@
             = post.prefecture.name
             = post.venue
     .post-left.post-left
-      = image_tag post.user.image
+      - if post.user.image.url != nil
+        = image_tag post.user.image
+      - else
+        = image_tag "noimage.png"
       .user_name
         = link_to post.user.nickname, "/users/#{post.user.id}", method: :get
     .post-right

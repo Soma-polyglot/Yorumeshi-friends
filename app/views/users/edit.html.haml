@@ -20,7 +20,10 @@
           
     .profile-left
       .profile-top
-        = image_tag @user.image
+        - if @user.image.url != nil
+          = image_tag @user.image
+        - else
+          = image_tag "noimage.png"
         .profile-user-name
           = @user.nickname
           .fa.fa-cog

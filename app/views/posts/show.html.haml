@@ -3,7 +3,10 @@
   .main-page
     .profile
       .profile-panel
-        = image_tag @post.user.image
+        - if @post.user.image.url != nil
+          = image_tag @post.user.image
+        - else
+          = image_tag "noimage.png"
         .user_name
           = @post.user.nickname
     .main-container
@@ -35,7 +38,10 @@
         = @post.created_at.strftime("%Y-%m-%d %H:%M")
       .show-box
         .show-box-title 参加者
-        = image_tag @post.user.image, class:'icon-small'
+        - if @post.user.image.url != nil
+          = image_tag @post.user.image, class:'icon-small'
+        - else
+          = image_tag "noimage.png", class:'icon-small'
       .show-box
         .show-box-title 掲示板
         - if current_user
