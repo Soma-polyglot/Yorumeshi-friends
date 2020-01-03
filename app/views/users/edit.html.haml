@@ -4,7 +4,7 @@
     .profile-right
       .profile-right-container
         .profile-title プロフィール変更
-        = form_for (@user) do |f|
+        = form_for @user, url:user_path, method: :patch do |f|
           .profile-image  プロフィール画像
           = f.label :image, class: '#', for:'user' do
             .js-file_group

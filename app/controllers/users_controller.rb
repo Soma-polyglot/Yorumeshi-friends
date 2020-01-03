@@ -14,8 +14,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-    redirect_to user_path
+    binding.pry
+    @user = User.find(params[:id])
+    User.update(user_params)
+    redirect_to user_path(@user.id)
   end
 
   private
