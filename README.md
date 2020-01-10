@@ -1,57 +1,25 @@
-DB設計
-## usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|username|string|null: false|
-|email|string|unique: false|
-|password|string|null: false|
-|image|string|null: false|
-|area|string|null: false|
-|introduction|text|null: false|
+アプリケーション情報
+アプリケーション概要
+ディナーを募集するSNSサイトを作成しました。
 
-### Association
-- has_many :posts
-- has_many :comments
+接続先情報
+URL:  https://enigmatic-bastion-63254.herokuapp.com/
 
-## postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|day|datetime|null: false|
-|people|integer|null: false|
+Githubリポジトリ
+https://github.com/Soma-polyglot/Yorumeshi-friends
 
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+開発状況
+開発環境
+Ruby/Ruby on Rails/MySQL/PostgGithub/AWS/Visual Studio Code/Heroku
 
-## tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
+開発期間と平均作業時間
+企画、開発期間：12/14~12/28
+1日あたりの平均作業時間：約8時間
 
-## posts_tagsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-- belongs_to :tag
+今回作成して苦戦したことや感じたこと
+有名人気アプリを数多く体験しておけば、様々な機能のチャレンジができたのではと思いました。
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-- belongs_to :user
+今後のやっていきたいこと
+アプリの企画に時間がかかってしまったので、イメージをしやすくするために、有名アプリを触る経験を増やして知識を深めていきたいと思っています。
+マネタイズについても学習していきたいと思いました。(会員制や課金制など)
+SPAの実装を学習する。(React,Vue,Angularなど)
