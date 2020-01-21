@@ -80,6 +80,6 @@ end
   gem 'active_hash'
   gem 'seed-fu'
   gem 'ancestry'
-  gem 'bootstrap', '~> 4.1.1'
+  gem 'bootstrap', '~> 4.3.1'
   gem "bootstrap4-datetime-picker-rails"
   gem 'momentjs-rails'
