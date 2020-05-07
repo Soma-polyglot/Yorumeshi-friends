@@ -1,19 +1,17 @@
-アプリケーション情報
 アプリケーション概要
 ディナーを募集するSNSサイトを作成しました。
 
 接続先情報
-URL:  https://enigmatic-bastion-63254.herokuapp.com/
+https://enigmatic-bastion-63254.herokuapp.com/
 
 Githubリポジトリ
 https://github.com/Soma-polyglot/Yorumeshi-friends
 
-開発状況
 開発環境
 Ruby/Ruby on Rails/MySQL/PostgGithub/AWS/Visual Studio Code/Heroku
 
 開発期間と平均作業時間
-企画、開発期間：12/14~12/28
+企画、開発期間：10日
 1日あたりの平均作業時間：約8時間
 
 今回作成して苦戦したことや感じたこと
